@@ -5,10 +5,14 @@ from datetime import datetime
 
 st.set_page_config(page_title="مستشفى الشوملي العام - بوابة الأقسام", page_icon="🏥", layout="wide")
 
-SUPABASE_DB_URL = "postgresql://postgres:Shomali2026%40DB@db.cstiwpxcnffccttsqrzy.supabase.co:5432/postgres"
-
 def get_db_connection():
-    conn = psycopg2.connect(SUPABASE_DB_URL)
+    conn = psycopg2.connect(
+        dbname="postgres",
+        user="postgres",
+        password="Shomali2026@DB",
+        host="db.cstiwpxcnffccttsqrzy.supabase.co",
+        port="5432"
+    )
     return conn
 
 SUB_PORTALS_LIST = [
